@@ -88,6 +88,19 @@
                 <div class="card" style="width: 340px" id="map-card">
                     <div class="card-body">
                         <h5 class="card-title" id="map-title">New York City</h5>
+                        <b>Mode of Travel: </b>
+                        <select id="mode">
+                          <option value="DRIVING">Driving</option>
+                          <option value="WALKING">Walking</option>
+                          <option value="BICYCLING">Bicycling</option>
+                          <option value="TRANSIT">Transit</option>
+                        </select>
+                
+                        <form >
+                          beginning: <input type="text" id="start"  name="start"><br>
+                          Destination <input type="text"  id="end" name="end"><br>
+                          <input type="submit" value="Submit" id="submit">
+                        </form>
                         <div id="map"></div>
                     </div>
                 </div>
@@ -95,7 +108,7 @@
         </div>  
     </div>  
     
-        
+
    
 
     <!-- google maps -->
