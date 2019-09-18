@@ -44,25 +44,15 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <!-- link to css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <!-- <link href="./assets/css/map.css" rel="stylesheet"/> -->
 </head>
 
 <body>
     <!-- navigation bar -->
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="app.html">Night Out</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="app.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-        </ul>
     </nav>
+
     <!-- main content including the search box -->
     <div class="container">
         <div class="row">
@@ -90,14 +80,27 @@
         <!-- display search results -->
         <div class="row mt-5">
             <!-- section to display event results -->
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <div id="events-display"></div>
             </div>
             <!-- section to display the map results -->
-            <div class="col-md-4 mt-4">
+            <div class="col-md-4 mt-6">
                 <div class="card" style="width: 340px" id="map-card">
                     <div class="card-body">
                         <h5 class="card-title" id="map-title">New York City</h5>
+                        <b>Mode of Travel: </b>
+                        <select id="mode">
+                          <option value="DRIVING">Driving</option>
+                          <option value="WALKING">Walking</option>
+                          <option value="BICYCLING">Bicycling</option>
+                          <option value="TRANSIT">Transit</option>
+                        </select>
+                
+                        <form >
+                          beginning: <input type="text" id="start"  name="start"><br>
+                          Destination <input type="text"  id="end" name="end"><br>
+                          <input type="submit" value="Submit" id="submit">
+                        </form>
                         <div id="map"></div>
                     </div>
                 </div>
@@ -105,10 +108,11 @@
         </div>  
     </div>  
     
-        
+
    
 
     <!-- google maps -->
+    <script src="./assets/javascript/map2.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8&callback=initMap">
     </script>
