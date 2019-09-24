@@ -67,13 +67,14 @@ $('#search-events').on('click', function(event) {
 		convertedEndDate +
 		'Z&city=New%20York&sort=date,asc&keyword=' +
 		searchEventKeyword;
+
 	$.ajax({
 		url: eventQueryURL,
 		method: 'GET'
 	}).then(function(response) {
 		console.log(response);
-		$('#events-display').html('<h3>Your search returned ' + response._embedded.events.length + ' results. </h3>');
-		$('h3').addClass('border-bottom');
+		// $('#events-display').html('<h3>Your search returned ' + response._embedded.events.length + ' results. </h3>');
+		// $('h3').addClass('border-bottom');
 		$('#map-card').show();
 		for (var i = 0; i < response._embedded.events.length; i++) {
 			// var eventImageSrc = response._embedded.events[i].images[8].url;
@@ -109,18 +110,11 @@ $('#search-events').on('click', function(event) {
 			newEventElement.append(eventAddressElement);
 			var eventDateElement = $('<p>').text('Date: ' + eventDate);
 			newEventElement.append(eventDateElement);
-			// var weatherBtn = $('<button>').text('Show Weather').addClass('mb-2 mr-1 btn btn-primary show-weather');
-			// weatherBtn.attr('data-date', eventDate);
-			// weatherBtn.attr('data-event', eventCounter);
-			// newEventElement.append(weatherBtn);
-
-			// $(element).hover(function(){});
-
-			var mapBtn = $('<button>').text('Show Venue on Map').addClass('mb-2 btn btn-primary show-map');
+			var mapBtn = $('<button>').text('Get Directions').addClass('mb-2 btn btn-primary show-map');
 			mapBtn.attr('data-address', eventAddress);
 			mapBtn.attr('data-venue', eventVenue);
 			newEventElement.append(mapBtn);
-			newEventElement.addClass('border-bottom mt-2');
+			// newEventElement.addClass('border-bottom mt-2');
 			$('#events-display').append(newEventElement);
 			eventCounter++;
 		}
@@ -138,49 +132,13 @@ $('#clear-results').on('click', function(event) {
 	$('#map-card').hide();
 });
 
-// Attach click event to Show Details buttons
-// $(document).on('click', '.show-weather', function() {
-// 	var thisEventAddress = $(this).attr('data-address');
-// 	var eventDate = $(this).attr('data-date');
-// 	var thisEventDate = moment(eventDate, 'MMM Do YYYY').format('YYYY-MM-DD');
-// 	var thisEventNumber = $(this).attr('data-event');
-// 	console.log(thisEventAddress);
-// 	console.log(thisEventDate);
-
-// 	var weatherElement = $('<div>').addClass('card text-center m-2').css('width', '230px');
-// 	var innerWeatherElement = $('<div>').addClass('card-body');
-// 	$('#event-' + thisEventNumber).append(weatherElement);
-// 	weatherElement.append(innerWeatherElement);
-// 	var weatherQueryURL =
-// 		'https://api.weatherbit.io/v2.0/forecast/daily?city=New+York,NY&key=5a5ea84d5dec48e7bb74f8da7dab4a96&units=I';
-
-// 	$.ajax({
-// 		url: weatherQueryURL,
-// 		method: 'GET'
-// 	}).then(function(results) {
-// 		console.log(results);
-// 		for (var i = 0; i < results.data.length; i++) {
-// 			if (results.data[i].datetime === thisEventDate) {
-// 				var temp = results.data[i].temp;
-// 				var weatherDescription = results.data[i].weather.description;
-// 				var weatherIcon = 'https://www.weatherbit.io/static/img/icons/' + results.data[i].weather.icon + '.png';
-// 				console.log(temp);
-// 				var tempText = $('<p>')
-// 					.addClass('card-text')
-// 					.text('The temperature will be ' + temp + ' degrees Fahrenheit.');
-// 				var weatherDescriptionText = $('<p>').addClass('card-text').text(weatherDescription);
-// 				var weatherIconElement = $('<img>').attr('src', weatherIcon);
-// 				innerWeatherElement.append(tempText);
-// 				innerWeatherElement.append(weatherIconElement);
-// 				innerWeatherElement.append(weatherDescriptionText);
-// 			}
-// 		}
-// 	});
-// });
-
 // Attach event handler to map button
 $(document).on('click', '.show-map', function() {
+	// var mapdiv = $('.right-panel');
+	// $('.right-panel').hide();
 	eventAddress = $(this).attr('data-address');
+	console.log('event address after click' + eventAddress);
+	$('#end').val(eventAddress);
 	locationTitle = $(this).attr('data-venue');
 	$('#map-title').text(locationTitle);
 	console.log(eventAddress);
@@ -210,20 +168,6 @@ var callMap = function(eventAddress) {
 	});
 };
 callMap(eventAddress);
-
-// function initMap(eventLatitude, eventLongitude, locationTitle) {
-// 	var map = new google.maps.Map(document.getElementById('map'), {
-// 		center: { lat: eventLatitude, lng: eventLongitude },
-// 		zoom: 12
-// 	});
-
-// 	var markerPosition = { lat: eventLatitude, lng: eventLongitude };
-// 	var marker = new google.maps.Marker({
-// 		position: markerPosition,
-// 		map: map,
-// 		title: locationTitle
-// 	});
-// }
 
 function initMap() {
 	directionsRenderer = new google.maps.DirectionsRenderer();
@@ -268,58 +212,3 @@ function calculateAndDisplayRoute(dirRendererr) {
 		}
 	);
 }
-
-// function initMap() {
-// 	directionsRenderer = new google.maps.DirectionsRenderer();
-// 	directionsService = new google.maps.DirectionsService();
-// 	var map = new google.maps.Map(document.getElementById('map'), {
-// 		zoom: 9,
-// 		center: { lat: 40.7128, lng: -74.006 }
-// 	});
-// 	directionsRenderer.setMap(map);
-// 	directionsRenderer.setPanel(document.getElementById('right-panel'));
-
-// 	var control = document.getElementById('floating-panel');
-// 	control.style.display = 'block';
-// 	map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-
-// 	// $('#findDirections').on('click', function(e) {
-// 	// $(document).on('click', '#findDirections', function(e) {
-// 	// 	e.preventDefault();
-// 	// 	// start = $('#start').val();
-// 	// 	// end = $('#end').val();
-// 	// 	console.log('stop reset');
-// 	console.log('calling direction:, stat: ', start, 'end: ', end);
-// 	calculateAndDisplayRoute(directionsService, directionsRenderer);
-// 	// });
-// }
-
-// function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-// 	console.log('calculateAndDisplayRoute');
-// 	directionsService.route(
-// 		{
-// 			origin: start,
-// 			destination: end,
-// 			travelMode: 'TRANSIT'
-// 		},
-// 		function(response, status) {
-// 			if (status === 'OK') {
-// 				directionsRenderer.setDirections(response);
-// 			} else {
-// 				window.alert('Directions request failed due to ' + status);
-// 			}
-// 		}
-// 	);
-// }
-
-// $(document).on('click', '#findDirections', function(e) {
-// 	e.preventDefault();
-// 	directionsRenderer = new google.maps.DirectionsRenderer();
-// 	directionsService = new google.maps.DirectionsService();
-// 	start = $('#start').val();
-// 	end = $('#end').val();
-// 	console.log(directionsService);
-// 	('');
-// 	calculateAndDisplayRoute(directionsService, directionsRenderer);
-// 	console.log('stop reset');
-// });
