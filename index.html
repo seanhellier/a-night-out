@@ -86,9 +86,10 @@
                 <div id="events-display"></div>
             </div>
             <!-- section to display the map results -->
-            <div class="col-md-4 mt-8">
-                <div class="card" style="width: 340px" id="map-card">
-                    <div class="card-body">
+            <div class="col-md-4 mt-">
+                <div class="card" style="width: 960px" id="map-card">
+                    <div class="card-body row">
+                        <div class="col-md-6">
                         <form >
                         <h5 class="card-title" id="map-title">New York City</h5>
                         <b>Mode of Travel: </b>
@@ -103,9 +104,13 @@
                           Destination <input type="text"  id="end" name="end"><br>
                           <input type="submit" value="Submit" id="findDirections">
                         </form>
-              
+            
                         <div id="map"></div>
-                        <div id="right-panel"></div>
+                    </div>
+
+                        <div id="right-panel" class="col-md-6">
+                            
+                        </div>
                     </div>
                 </div>
             </div>

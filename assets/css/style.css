@@ -67,12 +67,12 @@ body {
 #right-panel {
 	height: 100%;
 	float: right;
-	width: 390px;
+	width: 200px;
 	overflow: auto;
-	background-color: blue;
+	/* background-color: blue; */
 }
 #map {
-	margin-right: 400px;
+	margin-right: 10px;
 }
 #floating-panel {
 	background: #fff;
