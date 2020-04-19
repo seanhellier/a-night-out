@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- remove accordion menu
@@ -18,32 +19,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Night Out</title>
-    
+
     <!-- link to Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/02cf999969.js"></script>
-    
+
     <!-- link to MomentJS -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    
+
     <!-- link to jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+
     <!-- links for Bootstrap Javascript -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
     <!-- more jQuery -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
+
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <!-- link to css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <!-- <link href="./assets/css/map.css" rel="stylesheet"/> -->
 </head>
 
@@ -65,14 +71,17 @@
                     <!-- form for searching for events -->
                     <form>
                         <div class="form-group">
-                            <input class="form-control mt-3 mb-3" type="text" id="search-keyword" placeholder="Search Events">
+                            <input class="form-control mt-3 mb-3" type="text" id="search-keyword"
+                                placeholder="Search Events">
                             <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
                             <input class="form-group" type="text" id="from" name="from">
                             <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
                             <input class="form-group" type="text" id="to" name="to">
                             <br>
-                            <button type="submit" class="btn btn-primary" id="search-events"><i class="fas fa-search"></i> Search</button>
-                            <button type="reset" class="btn btn-primary" id="clear-results"><i class="fas fa-trash-alt"></i> Clear Results</button>
+                            <button type="submit" class="btn btn-primary" id="search-events"><i
+                                    class="fas fa-search"></i> Search</button>
+                            <button type="reset" class="btn btn-primary" id="clear-results"><i
+                                    class="fas fa-trash-alt"></i> Clear Results</button>
                         </div>
                     </form>
                 </div>
@@ -90,42 +99,42 @@
                 <div class="card" style="width: 960px" id="map-card">
                     <div class="card-body row">
                         <div class="col-md-6">
-                        <form >
-                        <h5 class="card-title" id="map-title">New York City</h5>
-                        <b>Mode of Travel: </b>
-                        <select id="travelMode">
-                          <option value="DRIVING">Driving</option>
-                          <option value="WALKING">Walking</option>
-                          <option value="BICYCLING">Bicycling</option>
-                          <option value="TRANSIT">Transit</option>
-                        </select>
+                            <form>
+                                <h5 class="card-title" id="map-title">New York City</h5>
+                                <b>Mode of Travel: </b>
+                                <select id="travelMode">
+                                    <option value="DRIVING">Driving</option>
+                                    <option value="WALKING">Walking</option>
+                                    <option value="BICYCLING">Bicycling</option>
+                                    <option value="TRANSIT">Transit</option>
+                                </select>
 
-                          beginning: <input type="text" id="start"  name="start"><br>
-                          Destination <input type="text"  id="end" name="end"><br>
-                          <input type="submit" value="Submit" id="findDirections">
-                        </form>
-            
-                        <div id="map"></div>
-                    </div>
+                                beginning: <input type="text" id="start" name="start"><br>
+                                Destination <input type="text" id="end" name="end"><br>
+                                <input type="submit" value="Submit" id="findDirections">
+                            </form>
+
+                            <div id="map"></div>
+                        </div>
 
                         <div id="right-panel" class="col-md-6">
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>  
-    </div>  
-    
+        </div>
+    </div>
 
-       <script src="assets/javascript/event-search-box.js"></script>
+    <script src="assets/javascript/event-search-box.js"></script>
 
     <!-- google maps -->
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8&callback=initMap">
     </script>
     <!-- link to app javascript file -->
     <!-- <script src="./assets/javascript/map2.js"></script> -->
     <!-- <script src="assets/javascript/event-search-box.js"></script> -->
 </body>
+
 </html>

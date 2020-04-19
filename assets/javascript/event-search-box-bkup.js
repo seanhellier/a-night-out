@@ -3,27 +3,6 @@ var end = '';
 var travelMode = '';
 var directionsRenderer;
 var directionsService;
-var currentLocation = ``;
-
-
-function getLocation() {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition);
-	} else {
-		x.innerHTML = "Geolocation is not supported by this browser.";
-	}
-}
-
-getLocation();
-
-function showPosition(position) {
-	var lat = position.coords.latitude;
-	var lng = position.coords.longitude;
-
-	console.log(lat);
-	console.log(lng);
-}
-showPosition();
 
 // datepicker function
 $(function () {
@@ -178,7 +157,7 @@ var callMap = function (eventAddress) {
 	}).then(function (data) {
 		// clear direction panel
 		$('#right-panel').empty();
-		console.log(data);
+		// console.log(data);
 		var eventLatitude = data.results[0].geometry.location.lat;
 		var eventLongitude = data.results[0].geometry.location.lng;
 		// console.log(typeof eventLatitude);
