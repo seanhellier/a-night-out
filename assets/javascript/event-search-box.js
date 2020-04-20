@@ -5,26 +5,6 @@ var directionsRenderer;
 var directionsService;
 var currentLocation = ``;
 
-
-function getLocation() {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition);
-	} else {
-		x.innerHTML = "Geolocation is not supported by this browser.";
-	}
-}
-
-getLocation();
-
-function showPosition(position) {
-	var lat = position.coords.latitude;
-	var lng = position.coords.longitude;
-
-	console.log(lat);
-	console.log(lng);
-}
-showPosition();
-
 // datepicker function
 $(function () {
 	var dateFormat = 'mm/dd/yy',
@@ -54,6 +34,7 @@ $(function () {
 		} catch (error) {
 			date = null;
 		}
+
 		return date;
 	}
 });
@@ -66,15 +47,15 @@ $('#search-events').on('click', function (event) {
 	var startDate = $('#from').val();
 	var endDate = $('#to').val();
 	// testing
-	// console.log(searchEventKeyword);
-	// console.log(startDate);
-	// console.log(endDate);
+	console.log(searchEventKeyword);
+	console.log(startDate);
+	console.log(endDate);
 	// converting input of startDate and endDate to formats acceptable to the ticketmaster API
 	var convertedStartDate = moment(startDate, 'MM/DD/YYYY').format('YYYY-MM-DDTHH:mm:ss');
 	var convertedEndDate = moment(endDate, 'MM/DD/YYYY').format('YYYY-MM-DDTHH:mm:ss');
 	//testing
-	// console.log(convertedStartDate);
-	// console.log(convertedEndDate);
+	console.log(convertedStartDate);
+	console.log(convertedEndDate);
 	//event Counter
 	var eventCounter = 0;
 
@@ -92,7 +73,7 @@ $('#search-events').on('click', function (event) {
 		url: eventQueryURL,
 		method: 'GET'
 	}).then(function (response) {
-		// console.log(response);
+		console.log(response);
 		// $('#events-display').html('<h3>Your search returned ' + response._embedded.events.length + ' results. </h3>');
 		// $('h3').addClass('border-bottom');
 		$('#map-card').show();
@@ -114,7 +95,7 @@ $('#search-events').on('click', function (event) {
 			//eventStartTime
 
 			//testing
-			// console.log(eventVenue);
+			console.log(eventVenue);
 
 			// appending event information to page
 			var newEventElement = $('<div>').attr('id', 'event-' + eventCounter);
@@ -157,15 +138,15 @@ $(document).on('click', '.show-map', function () {
 	// var mapdiv = $('.right-panel');
 	// $('.right-panel').hide();
 	eventAddress = $(this).attr('data-address');
-	// console.log('event address after click' + eventAddress);
+	console.log('event address after click' + eventAddress);
 	$('#end').val(eventAddress);
 	locationTitle = $(this).attr('data-venue');
 	$('#map-title').text(locationTitle);
-	// console.log(eventAddress);
+	console.log(eventAddress);
 	callMap(eventAddress);
 });
 
-var eventAddress = 'api=1';
+var eventAddress = '350 Fifth Avenue, New York, NY';
 var locationTitle = 'New York City';
 
 // console.log(latlong);
@@ -181,8 +162,8 @@ var callMap = function (eventAddress) {
 		console.log(data);
 		var eventLatitude = data.results[0].geometry.location.lat;
 		var eventLongitude = data.results[0].geometry.location.lng;
-		// console.log(typeof eventLatitude);
-		// console.log(typeof eventLongitude);
+		console.log(typeof eventLatitude);
+		console.log(typeof eventLongitude);
 
 		// initMap(eventLatitude, eventLongitude, locationTitle);
 		// initMap();
@@ -207,14 +188,20 @@ function initMap() {
 	// map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 }
 
+
 $('#findDirections').on('click', function (e) {
 	e.preventDefault();
 	initMap();
 
-	start = $('#start').val();
+	if ($('#start').val() === "") {
+		start = `${currentLocation.coords.latitude}, ${currentLocation.coords.longitude}`
+	} else {
+		start = $('#start').val();
+	}
+	console.log(start)
 	end = $('#end').val();
 	travelMode = $('#travelMode').val();
-	console.log(start);
+	console.log('calling calc and disp');
 	calculateAndDisplayRoute(directionsRenderer);
 });
 
@@ -236,3 +223,29 @@ function calculateAndDisplayRoute(dirRendererr) {
 		}
 	);
 }
+
+// *************** get location ****************
+
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		x.innerHTML = "Geolocation is not supported by this browser.";
+	}
+	console.log(showPosition);
+}
+
+getLocation();
+
+function showPosition(position) {
+	var lat = position.coords.latitude;
+	var lng = position.coords.longitude;
+	currentLocation = position;
+
+	console.log(lat);
+	console.log(lng);
+	console.log(currentLocation);
+}
+showPosition();
+
+// 42.066620799999995, -73.54301749999999
