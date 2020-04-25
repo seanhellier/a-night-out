@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        Nested functions in JavaScript.
+    </title>
+</head>
+
+<body id="body" style="text-align:center;">
+    <h1 style="color:green;">
+        GeeksforGeeks
+    </h1>
+    <p id="GFG_UP" style="font-size: 15px; font-weight: bold;">
+    </p>
+    <button onclick="GFG_Fun()">
+        click here
+    </button>
+    <p id="GFG_DOWN" style="font-size: 24px;  
+                    font-weight: bold;  
+                    color: green;">
+    </p>
+    <script>
+        var up = document.getElementById('GFG_UP');
+        var down = document.getElementById('GFG_DOWN');
+        up.innerHTML =
+            "Click on the button to call nested function.";
+
+        function fun1(a) {
+            function fun2(b) {
+                return a + b;
+            }
+            return fun2;
+        }
+
+        function GFG_Fun() {
+            down.innerHTML =
+                fun1("A Online Computer Science Portal")
+                (" GeeksforGeeks");
+        }
+    </script>
+</body>
+
+</html>
