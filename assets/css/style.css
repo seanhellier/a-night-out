@@ -1,7 +1,17 @@
+.page-holder {
+	min-height: 100vh;
+}
+
+.bg-cover {
+	background-size: cover !important;
+}
+
+
 #map {
 	height: 400px;
 	width: 400px;
 }
+
 #map-card {
 	display: none;
 	position: sticky;
@@ -26,6 +36,7 @@ nav {
 #search-container {
 	max-width: 600px;
 }
+
 /* Optional: Makes the sample page fill the window. */
 html,
 body {
@@ -33,6 +44,7 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
 #floating-panel {
 	position: absolute;
 	top: 10px;
@@ -46,6 +58,7 @@ body {
 	line-height: 30px;
 	padding-left: 10px;
 }
+
 #right-panel {
 	font-family: 'Roboto', 'sans-serif';
 	line-height: 30px;
@@ -64,6 +77,7 @@ body {
 #right-panel i {
 	font-size: 12px;
 }
+
 #right-panel {
 	height: 100%;
 	float: right;
@@ -71,9 +85,11 @@ body {
 	overflow: auto;
 	/* background-color: blue; */
 }
+
 #map {
 	margin-right: 10px;
 }
+
 #floating-panel {
 	background: #fff;
 	padding: 5px;
@@ -83,11 +99,13 @@ body {
 	box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
 	/* display: none; */
 }
+
 @media print {
 	#map {
 		height: 300px;
 		margin: 0;
 	}
+
 	#right-panel {
 		float: none;
 		width: auto;

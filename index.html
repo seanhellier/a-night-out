@@ -2,19 +2,6 @@
 <html lang="en">
 
 <head>
-
-    <!-- remove accordion menu
-    style drop down calendars
-    give make search results hover effect
-    remove show weather, show venu buttons, and images from the API
-    place weather at end of all search results, unless date is beyond forecast range.
-    if beyond forecast range, do not put forecast infor on search results.
-    on hover, place location pin on map
-    resize map and include directions dialogue
-    on submission of directions points, enlarge map to show route and direcrtions panel -->
-
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -54,71 +41,76 @@
 </head>
 
 <body>
-    <div id="floating-panel"></div>
 
-    <!-- navigation bar -->
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="app.html">Night Out</a>
-    </nav>
+    <div style="background: url(./assets/images/img.jpg)" class="page-holder bg-cover">
 
-    <!-- main content including the search box -->
-    <div class="container">
-        <div class="row">
-            <!-- search box -->
-            <div class="w-100 m-auto" id="search-container">
-                <div class="p-3 mt-4 bg-secondary text-white" id="search-box">
-                    <h2>How will you spend your <i>Night Out?</i></h2>
-                    <!-- form for searching for events -->
-                    <form>
-                        <div class="form-group">
-                            <input class="form-control mt-3 mb-3" type="text" id="search-keyword"
-                                placeholder="Search Events">
-                            <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
-                            <input class="form-group" type="text" id="from" name="from">
-                            <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
-                            <input class="form-group" type="text" id="to" name="to">
-                            <br>
-                            <button type="submit" class="btn btn-primary" id="search-events"><i
-                                    class="fas fa-search"></i> Search</button>
-                            <button type="reset" class="btn btn-primary" id="clear-results"><i
-                                    class="fas fa-trash-alt"></i> Clear Results</button>
-                        </div>
-                    </form>
+        <div id="floating-panel"></div>
+
+        <!-- navigation bar -->
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="app.html">Night Out</a>
+        </nav>
+
+        <!-- main content including the search box -->
+        <div class="container">
+            <div class="row">
+                <!-- search box -->
+                <div class="w-100 m-auto" id="search-container">
+                    <div class="p-3 mt-4 bg-secondary text-white" id="search-box">
+                        <h2>How will you spend your <i>Night Out?</i></h2>
+                        <!-- form for searching for events -->
+                        <form>
+                            <div class="form-group">
+                                <input class="form-control mt-3 mb-3" type="text" id="search-keyword"
+                                    placeholder="Search Events">
+                                <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
+                                <input class="form-group" type="text" id="from" name="from">
+                                <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
+                                <input class="form-group" type="text" id="to" name="to">
+                                <br>
+                                <button type="submit" class="btn btn-primary" id="search-events"><i
+                                        class="fas fa-search"></i> Search</button>
+                                <button type="reset" class="btn btn-primary" id="clear-results"><i
+                                        class="fas fa-trash-alt"></i> Clear Results</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- display search results -->
-        <div class="row mt-5">
-            <!-- section to display event results -->
-            <div class="col-md-4">
-                <div id="events-display"></div>
-            </div>
-            <!-- section to display the map results -->
-            <div class="col-md-4 mt-">
-                <div class="card" style="width: 960px" id="map-card">
-                    <div class="card-body row">
-                        <div class="col-md-6">
-                            <form>
-                                <h5 class="card-title" id="map-title">New York City</h5>
-                                <b>Mode of Travel: </b>
-                                <select id="travelMode">
-                                    <option value="DRIVING">Driving</option>
-                                    <option value="WALKING">Walking</option>
-                                    <option value="BICYCLING">Bicycling</option>
-                                    <option value="TRANSIT">Transit</option>
-                                </select>
+            <!-- display search results -->
+            <div class="row mt-5">
+                <!-- section to display event results -->
+                <div class="col-md-4">
+                    <div id="events-display"></div>
+                </div>
+                <!-- section to display the map results -->
+                <div class="col-md-4 mt-">
+                    <div class="card" style="width: 960px" id="map-card">
+                        <div class="card-body row">
+                            <div class="col-md-6">
+                                <form>
+                                    <h5 class="card-title" id="map-title">New York City</h5>
+                                    <b>Mode of Travel: </b>
+                                    <select id="travelMode">
+                                        <option value="DRIVING">Driving</option>
+                                        <option value="WALKING">Walking</option>
+                                        <option value="BICYCLING">Bicycling</option>
+                                        <option value="TRANSIT">Transit</option>
+                                    </select>
 
-                                beginning: <input type="text" id="start" placeholder="Your location" name="start"><br>
-                                Destination <input type="text" id="end" name="end"><br>
-                                <input type="submit" value="Submit" id="findDirections">
-                            </form>
+                                    beginning: <input type="text" id="start" placeholder="Your location"
+                                        name="start"><br>
+                                    Destination <input type="text" id="end" name="end"><br>
+                                    <input type="submit" value="Submit" id="findDirections">
+                                </form>
 
-                            <div id="map"></div>
-                        </div>
+                                <div id="map"></div>
+                            </div>
 
-                        <div id="right-panel" class="col-md-6">
+                            <div id="right-panel" class="col-md-6">
 
+                            </div>
                         </div>
                     </div>
                 </div>
