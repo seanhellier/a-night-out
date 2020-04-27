@@ -248,4 +248,4 @@ function showPosition(position) {
 }
 showPosition();
 
-// 42.066620799999995, -73.54301749999999
+$('#searcMenu').mdbDropSearch();

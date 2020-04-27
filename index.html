@@ -37,55 +37,91 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <!-- link to css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <!-- <link href="./assets/css/map.css" rel="stylesheet"/> -->
+    <link rel="stylesheet" href="assets/css/bootstrap-select.css">
+
+
+
 </head>
 
 <body>
 
     <div style="background: url(./assets/images/bkg.jpg)" class="page-holder bg-cover">
 
-        <div id="floating-panel"></div>
-
         <!-- navigation bar -->
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="app.html">Night Out</a>
+        <nav class="navbar navbar-light bg-dark" role="navigation">
+            <div id="form-container" class="container">
+                <a class="navtext" href="index.html">A Night Out
+                </a>
+
+                <form class="form-inline" role="search">
+                    <div class="form-group">
+                        <select class="selectpicker" multiple data-live-search="true"
+                            data-live-search-placeholder="Search" data-actions-box="true">
+                            <optgroup label="filter1">
+                                <option>option1</option>
+                                <option>option2</option>
+                                <option>option3</option>
+                                <option>option4</option>
+                            </optgroup>
+                            <optgroup label="filter2">
+                                <option>option1</option>
+                                <option>option2</option>
+                                <option>option3</option>
+                                <option>option4</option>
+                            </optgroup>
+                            <optgroup label="filter3">
+                                <option>option1</option>
+                                <option>option2</option>
+                                <option>option3</option>
+                                <option>option4</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q">
+
+                        <div class="input-group-btn">
+                            <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Search</button>
+                </form>
+
+
+
+                <!-- <form class="form-inline">
+                    <div class="form-group">
+                        <input class="form-control mt-3 mb-3" class="form-control" type="text" id="search-keyword"
+                            placeholder="Search Events">
+                        <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
+                        <input class="form-group" type="text" id="from" name="from">
+                        <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
+                        <input class="form-group" type="text" id="to" name="to">
+                        <br>
+                        <button type="submit" class="btn btn-primary" id="search-events"><i class="fas fa-search"></i>
+                            Search</button>
+                        <button type="reset" class="btn btn-primary" id="clear-results"><i class="fas fa-trash-alt"></i>
+                            Clear Results</button>
+                    </div>
+                </form> -->
+
+            </div>
         </nav>
 
-        <!-- main content including the search box -->
-        <div class="container">
-            <div class="row">
-                <!-- search box -->
-                <div class="w-100 m-auto" id="search-container">
-                    <div class="p-3 mt-4 bg-secondary text-white" id="search-box">
-                        <h2>How will you spend your <i>Night Out?</i></h2>
-                        <!-- form for searching for events -->
-                        <form>
-                            <div class="form-group">
-                                <input class="form-control mt-3 mb-3" type="text" id="search-keyword"
-                                    placeholder="Search Events">
-                                <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
-                                <input class="form-group" type="text" id="from" name="from">
-                                <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
-                                <input class="form-group" type="text" id="to" name="to">
-                                <br>
-                                <button type="submit" class="btn btn-primary" id="search-events"><i
-                                        class="fas fa-search"></i> Search</button>
-                                <button type="reset" class="btn btn-primary" id="clear-results"><i
-                                        class="fas fa-trash-alt"></i> Clear Results</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <!-- main content -->
 
+
+
+        <div class="container">
             <!-- display search results -->
-            <div class="row mt-5">
+            <div class="row mt-200">
                 <!-- section to display event results -->
                 <div class="col-md-4">
                     <div id="events-display"></div>
                 </div>
                 <!-- section to display the map results -->
-                <div class="col-md-4 mt-">
+                <div class="col-md-4">
                     <div class="card" style="width: 960px" id="map-card">
                         <div class="card-body row">
                             <div class="col-md-6">
@@ -117,16 +153,25 @@
             </div>
         </div>
     </div>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/javascript/bootstrap-select.js"></script>
+    <!-- code for TicketMaster and Google Maps APIs -->
     <script src="assets/javascript/event-search-box.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-select.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/javascript/bootstrap-select.js"></script>
+
+
 
     <!-- google maps -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8&callback=initMap">
     </script>
-    <!-- link to app javascript file -->
-    <!-- <script src="./assets/javascript/map2.js"></script> -->
-    <!-- <script src="assets/javascript/event-search-box.js"></script> -->
 </body>
 
 </html>
