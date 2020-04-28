@@ -1,3 +1,29 @@
+#navtext {
+	color: orangered;
+}
+
+.formbox {
+	display: flex;
+	/* width: 100px; */
+	margin: 0 50px;
+	justify-content: space-evenly;
+
+}
+
+.searchthing {
+	background: gray;
+	width: 50px;
+	height: 50px;
+}
+
+
+.formitems {
+	width: 100px;
+	height: 50px;
+	margin: 0 50px;
+}
+
+
 .page-holder {
 	min-height: 100vh;
 }
@@ -111,3 +137,11 @@ body {
 		width: auto;
 	}
 }
+
+/* @media only screen and (max-width: 600px) {
+	.navbox {
+		display: flex;
+	}
+
+
+} */

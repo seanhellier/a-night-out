@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Night Out</title>
+    <title>A Night Out</title>
 
     <!-- link to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -42,22 +42,25 @@
 <body>
 
     <div style="background: url(./assets/images/bkg.jpg)" class="page-holder bg-cover">
-
         <!-- navigation bar -->
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="app.html">Night Out</a>
 
+
+        <nav class="navbar navbar-dark bg-dark navbox">
+            <a class="navbar-brand" id="navtext" href="app.html">A Night Out</a>
             <form class="form-inline">
-                <div class="form-group">
-                    <input class="form-control mt-3 mb-3" type="text" id="search-keyword" placeholder="Search Events">
-                    <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
-                    <input class="form-group" type="text" id="from" name="from">
-                    <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
-                    <input class="form-group" type="text" id="to" name="to">
+                <div class="formbox">
+                    <input class="form-control mt-3 mb-3 searchthing" type="text" id="search-keyword"
+                        placeholder="Search Events">
+                    <!-- <label for="from"><i class="far fa-calendar-alt formitems"></i> From: </label> -->
+                    <input class="form-group formitems" type="text" id="from" name="from" placeholder="From">
+                    <!-- <label for="to"><i class="far fa-calendar-alt"></i> To: </label> -->
+                    <input class="form-group formitems" type="text" id="to" name="to" placeholder="To">
                     <br>
-                    <button type="submit" class="btn btn-primary" id="search-events"><i class="fas fa-search"></i>
+                    <button type="submit" class="btn btn-primary formitems" id="search-events"><i
+                            class="fas fa-search"></i>
                         Search</button>
-                    <button type="reset" class="btn btn-primary" id="clear-results"><i class="fas fa-trash-alt"></i>
+                    <button type="reset" class="btn btn-primary formitems" id="clear-results"><i
+                            class="fas fa-trash-alt"></i>
                         Clear Results</button>
                 </div>
             </form>
