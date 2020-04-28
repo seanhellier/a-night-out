@@ -37,7 +37,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <!-- link to css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap-select.css">
 </head>
 
 <body>
@@ -45,33 +44,53 @@
     <div style="background: url(./assets/images/bkg.jpg)" class="page-holder bg-cover">
 
         <!-- navigation bar -->
-        <nav class="navbar navbar-light bg-dark" role="navigation">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">A Night Out</a>
-                <form class="form-inline">
-                    <div class="form-group">
-                        <input class="form-control mt-3 mb-3" class="form-control" type="text" id="search-keyword"
-                            placeholder="Search Events">
-                        <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
-                        <input class="form-group" type="text" id="from" name="from">
-                        <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
-                        <input class="form-group" type="text" id="to" name="to">
-                        <br>
-                        <button type="submit" class="btn btn-primary" id="search-events"><i class="fas fa-search"></i>
-                            Search</button>
-                        <button type="reset" class="btn btn-primary" id="clear-results"><i class="fas fa-trash-alt"></i>
-                            Clear Results</button>
-                    </div>
-                </form>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="app.html">Night Out</a>
 
-            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <input class="form-control mt-3 mb-3" type="text" id="search-keyword" placeholder="Search Events">
+                    <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
+                    <input class="form-group" type="text" id="from" name="from">
+                    <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
+                    <input class="form-group" type="text" id="to" name="to">
+                    <br>
+                    <button type="submit" class="btn btn-primary" id="search-events"><i class="fas fa-search"></i>
+                        Search</button>
+                    <button type="reset" class="btn btn-primary" id="clear-results"><i class="fas fa-trash-alt"></i>
+                        Clear Results</button>
+                </div>
+            </form>
         </nav>
 
-        <!-- main content -->
+        <!-- main content  -->
 
 
 
         <div class="container">
+            <!-- <div class="row">
+                <div class="w-100 m-auto" id="search-container">
+                    <div class="p-3 mt-4 bg-secondary text-white" id="search-box">
+                        <h2>How will you spend your <i>Night Out?</i></h2>
+                        <form>
+                            <div class="form-group">
+                                <input class="form-control mt-3 mb-3" type="text" id="search-keyword"
+                                    placeholder="Search Events">
+                                <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
+                                <input class="form-group" type="text" id="from" name="from">
+                                <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
+                                <input class="form-group" type="text" id="to" name="to">
+                                <br>
+                                <button type="submit" class="btn btn-primary" id="search-events"><i
+                                        class="fas fa-search"></i> Search</button>
+                                <button type="reset" class="btn btn-primary" id="clear-results"><i
+                                        class="fas fa-trash-alt"></i> Clear Results</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+
             <!-- display search results -->
             <div class="row mt-5">
                 <!-- section to display event results -->
@@ -79,7 +98,7 @@
                     <div id="events-display"></div>
                 </div>
                 <!-- section to display the map results -->
-                <div class="col-md-4">
+                <div class="col-md-4 mt-">
                     <div class="card" style="width: 960px" id="map-card">
                         <div class="card-body row">
                             <div class="col-md-6">
@@ -111,8 +130,7 @@
             </div>
         </div>
     </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/javascript/bootstrap-select.js"></script>
+
     <!-- code for TicketMaster and Google Maps APIs -->
     <script src="assets/javascript/event-search-box.js"></script>
 
