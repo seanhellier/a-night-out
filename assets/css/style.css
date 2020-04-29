@@ -1,16 +1,29 @@
 #navtext {
-	color: orangered;
+	color: rgb(32, 209, 32);
+	margin-left: 100px;
+	font-size: 2rem;
+}
+
+.navbarbox {
+	width: 100%;
+	border: 1px solid white;
+	flex-wrap: nowrap;
 }
 
 .formbox {
 	display: flex;
-	/* width: 100px; */
-	margin: 0 50px;
-	justify-content: space-evenly;
+	/* border: 1px solid yellow; */
+	float: none;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	/* padding: 20px; */
+	align-items: center;
 
 }
 
 .searchthing {
+
+	border: 1px solid yellow;
 	background: gray;
 	width: 50px;
 	height: 50px;
@@ -18,11 +31,21 @@
 
 
 .formitems {
-	width: 100px;
+	width: 150px;
 	height: 50px;
 	margin: 0 50px;
 }
 
+/* .formcontrols {
+	width: 150px;
+	height: 50px;
+} */
+
+.overflowY {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 800px;
+}
 
 .page-holder {
 	min-height: 100vh;
@@ -126,22 +149,23 @@ body {
 	/* display: none; */
 }
 
-@media print {
-	#map {
-		height: 300px;
-		margin: 0;
-	}
 
-	#right-panel {
-		float: none;
-		width: auto;
+
+/* 
+@media (max-width: 768px) and (min-width: 577px) {
+    .main-image-container {
+        display: none;
+    }
+
+    #map {
+        display: none;
+    }
+} */
+
+@media (max-width: 768px) and (min-width: 576px) {
+	.overflowY {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 100px;
 	}
 }
-
-/* @media only screen and (max-width: 600px) {
-	.navbox {
-		display: flex;
-	}
-
-
-} */
