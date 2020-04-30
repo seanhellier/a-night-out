@@ -1,3 +1,8 @@
+/* html {
+	scroll-behavior: smooth;
+} */
+
+
 #navtext {
 	color: rgb(32, 209, 32);
 	margin-left: 100px;
@@ -47,6 +52,18 @@
 	max-height: 800px;
 }
 
+.directionscroll {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 600px;
+}
+
+.block label {
+	display: inline-block;
+	width: 120px;
+	text-align: left;
+}
+
 .page-holder {
 	min-height: 100vh;
 }
@@ -61,10 +78,18 @@
 	width: 400px;
 }
 
+#travelMode {
+	margin-bottom: 10px;
+}
+
 #map-card {
 	display: none;
-	position: sticky;
-	top: 0;
+	position: relative;
+	/*margin-top: 100px;*/
+	/* top: 0; */
+	/*width: 445px;*/
+	min-width: 445px;
+	width: 100%;
 }
 
 #from,
@@ -112,7 +137,14 @@ body {
 	font-family: 'Roboto', 'sans-serif';
 	line-height: 30px;
 	padding-left: 10px;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
+
 
 #right-panel select,
 #right-panel input {
@@ -127,13 +159,7 @@ body {
 	font-size: 12px;
 }
 
-#right-panel {
-	height: 100%;
-	float: right;
-	width: 200px;
-	overflow: auto;
-	/* background-color: blue; */
-}
+
 
 #map {
 	margin-right: 10px;
@@ -163,9 +189,33 @@ body {
 } */
 
 @media (max-width: 768px) and (min-width: 576px) {
-	.overflowY {
-		overflow-y: scroll;
-		overflow-x: hidden;
-		max-height: 100px;
+	.formitems {
+		width: 100px;
+		height: 50px;
+		margin: 0 50px;
 	}
 }
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+	#right-panel {
+		position: static;
+		display: block;
+	}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+	#right-panel {
+		position: static;
+		display: block;
+	}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {}
+
+desktop - directions is at the bottom - mobile it looks right we dont want the card width to expand to 960 if we are mobile

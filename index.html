@@ -50,9 +50,11 @@
                     <input class="form-control mt-3 mb-3 searchthing" type="text" id="search-keyword"
                         placeholder="Search Events">
 
-                    <input class="form-group formitems" type="text" id="from" name="from" placeholder="From">
+                    <input class="form-group formitems" type="text" id="from" name="from" placeholder="From"
+                        autocomplete="off">
 
-                    <input class="form-group formitems" type="text" id="to" name="to" placeholder="To">
+                    <input class="form-group formitems" type="text" id="to" name="to" placeholder="To"
+                        autocomplete="off">
                     <br>
                     <button type="submit" class="btn btn-primary formitems" id="search-events"><i
                             class="fas fa-search"></i>
@@ -66,72 +68,50 @@
 
         <!-- main content  -->
 
-
-
         <div class="container">
-            <!-- <div class="row">
-                <div class="w-100 m-auto" id="search-container">
-                    <div class="p-3 mt-4 bg-secondary text-white" id="search-box">
-                        <h2>How will you spend your <i>Night Out?</i></h2>
-                        <form>
-                            <div class="form-group">
-                                <input class="form-control mt-3 mb-3" type="text" id="search-keyword"
-                                    placeholder="Search Events">
-                                <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
-                                <input class="form-group" type="text" id="from" name="from">
-                                <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
-                                <input class="form-group" type="text" id="to" name="to">
-                                <br>
-                                <button type="submit" class="btn btn-primary" id="search-events"><i
-                                        class="fas fa-search"></i> Search</button>
-                                <button type="reset" class="btn btn-primary" id="clear-results"><i
-                                        class="fas fa-trash-alt"></i> Clear Results</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
 
             <!-- display search results -->
             <div class="row mt-5">
                 <!-- section to display event results -->
 
-                <div class="col-md-4">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                     <div class="overflowY">
                         <div id="events-display"></div>
                     </div>
                 </div>
                 <!-- section to display the map results -->
-                <div class="col-md-4 mt-">
-                    <div class="card" style="width: 960px" id="map-card">
-                        <div class="card-body row">
-                            <div class="col-md-6">
-                                <form>
-                                    <h5 class="card-title" id="map-title">New York City</h5>
-                                    <b>Mode of Travel: </b>
-                                    <select id="travelMode">
-                                        <option value="DRIVING">Driving</option>
-                                        <option value="WALKING">Walking</option>
-                                        <option value="BICYCLING">Bicycling</option>
-                                        <option value="TRANSIT">Transit</option>
-                                    </select>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div class="card" id="map-card">
 
-                                    beginning: <input type="text" id="start" placeholder="Your location"
-                                        name="start"><br>
+                        <form>
+                            <h5 class="card-title block" id="map-title">New York City</h5>
+                            <b>Mode of Travel: </b>
+                            <select id="travelMode">
+                                <option value="DRIVING">Driving</option>
+                                <option value="WALKING">Walking</option>
+                                <option value="BICYCLING">Bicycling</option>
+                                <option value="TRANSIT">Transit</option>
+                            </select>
 
-                                    Destination <input type="text" id="end" name="end"><br>
-                                    <input type="submit" value="Submit" id="findDirections">
-                                </form>
-
-                                <div id="map"></div>
+                            <div class="block">
+                                <label>beginning:</label>
+                                <input type="text" id="start" placeholder="Your location" name="start">
+                            </div>
+                            <div class="block">
+                                <label>Destination:</label>
+                                <input type="text" id="end" name="end">
                             </div>
 
-                            <div id="right-panel" class="col-md-6">
+                            <input type="submit" value="Submit" class="findDirections">
 
-                            </div>
+                        </form>
+                        <div id="map"></div>
+
+                        <div id="right-panel" class="col-md-6 directionscroll">
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

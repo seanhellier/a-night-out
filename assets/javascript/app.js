@@ -111,10 +111,16 @@ $('#search-events').on('click', function (event) {
 			newEventElement.append(eventAddressElement);
 			var eventDateElement = $('<p>').text('Date: ' + eventDate);
 			newEventElement.append(eventDateElement);
+
 			var mapBtn = $('<button>').text('Get Directions').addClass('mb-2 btn btn-primary show-map');
 			mapBtn.attr('data-address', eventAddress);
 			mapBtn.attr('data-venue', eventVenue);
-			newEventElement.append(mapBtn);
+
+			var goToMap = $('<a>').html(mapBtn);
+			goToMap.attr('href', "#map-card");
+			newEventElement.append(goToMap);
+
+
 			// newEventElement.addClass('border-bottom mt-2');
 			$('#events-display').append(newEventElement);
 			eventCounter++;
@@ -189,7 +195,7 @@ function initMap() {
 }
 
 
-$('#findDirections').on('click', function (e) {
+$('.findDirections').on('click', function (e) {
 	e.preventDefault();
 	initMap();
 
@@ -217,6 +223,7 @@ function calculateAndDisplayRoute(dirRendererr) {
 			$('#right-panel').empty();
 			if (status === 'OK') {
 				dirRendererr.setDirections(response);
+				setPanelWidth()
 			} else {
 				window.alert('Directions request failed due to ' + status);
 			}
@@ -224,6 +231,9 @@ function calculateAndDisplayRoute(dirRendererr) {
 	);
 }
 
+function setPanelWidth() {
+	$('#map-card').width(960);
+}
 // *************** get location ****************
 
 function getLocation() {
