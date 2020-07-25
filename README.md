@@ -1,3 +1,6 @@
+![A Night Out](/images/screensots/splash.png)
+
+
 # A Night Out
 
 This application combines three APIs to develop an app giving users a list of events around New York, the weather forecast for those days, as well as travel directions to the venue.
@@ -12,7 +15,7 @@ use of this software requires both a TicketMaster and Google Maps API Key
 
 To install this software, either clone or download and extract the files to a location of your choosing on your computer. To clone the repository, copy the clone link, open a terminal window and enter "git clone (repository link)"
 
-After cloning the repository on your machine, launch the index.html file
+After cloning the repository on your machine, launch index.html.
 
 ## Use
 
