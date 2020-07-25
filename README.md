@@ -21,15 +21,19 @@ After cloning the repository on your machine, launch index.html.
 
 Upon launch, the user will be asked to allow the app to access the device's location services.
 
-After affirming use of location services, enter the type of even one is interested in into the search box and the date(s) in the date boxes and press "Search"
+After affirming use of location services, enter the type of one is interested in into the search box and the date(s) in the date boxes and press "Search."
+
+!(/assets/images/screenshots/datepicker.png)
 
 The user will be presented with a list of events that match the search criteria.
+!(/assets/images/screenshots/results.png)
 
-Clicking on Get Directions will present a map of the City and a drop down to chose method of travel to the venue.
+Clicking on Get Directions under an event lising will present a map of the City and a drop down to chose method of travel to the venue.
+
+NOTE: unless a beginnin address is entered, the location of the device will be used to calculate the route.
 
 Upon choice of travel selection, submission will then result in both a map showing the route and detailed travel instructions.
-
-Note: the map directions dialogue box defaults to the device location as the starting point, but any address can be entered instead.
+!(/assets/images/screenshots/datepicker.png)
 
 ### Deployment
 
