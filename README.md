@@ -23,17 +23,16 @@ Upon launch, the user will be asked to allow the app to access the device's loca
 
 After affirming use of location services, enter the type of one is interested in into the search box and the date(s) in the date boxes and press "Search."
 
-!(/assets/images/screenshots/datepicker.png)
-
 The user will be presented with a list of events that match the search criteria.
-!(/assets/images/screenshots/results.png)
+
+![Search](/assets/images/screenshots/results.png)
 
 Clicking on Get Directions under an event lising will present a map of the City and a drop down to chose method of travel to the venue.
 
 NOTE: unless a beginnin address is entered, the location of the device will be used to calculate the route.
 
 Upon choice of travel selection, submission will then result in both a map showing the route and detailed travel instructions.
-!(/assets/images/screenshots/datepicker.png)
+![Results](/assets/images/screenshots/datepicker.png)
 
 ### Deployment
 
