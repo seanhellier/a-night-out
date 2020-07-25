@@ -1,4 +1,4 @@
-![A Night Out](/images/screensots/splash.png)
+![A Night Out](/assets/images/screenshots/splash.png)
 
 
 # A Night Out
