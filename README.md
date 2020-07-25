@@ -32,7 +32,7 @@ Clicking on Get Directions under an event lising will present a map of the City 
 NOTE: unless a beginnin address is entered, the location of the device will be used to calculate the route.
 
 Upon choice of travel selection, submission will then result in both a map showing the route and detailed travel instructions.
-![Results](/assets/images/screenshots/datepicker.png)
+![Results](/assets/images/screenshots/directions.png)
 
 ### Deployment
 
